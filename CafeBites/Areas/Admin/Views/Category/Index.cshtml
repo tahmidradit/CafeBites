@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Category> 
+﻿ 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,38 +7,9 @@
 <div class="card text-white">
     <div class="card-header bg-primary">Category List</div>
     <div class="card-body">
-        <div class="col-md-12 col-sm-6">
-            <div class="col-10">
-               @if (Model.Count() > 0)
-                {
-                    <table class="table table-hover table-bordered table-sm">
-                        <thead class="table table-secondary">
-                            <tr>
-                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Id)</th>
-                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Name)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           @foreach (var items in Model)
-                            {
-                                <tr>
-                                    <td>@Html.DisplayFor(m => items.Id)</td>
-                                    <td>@Html.DisplayFor(m => items.Name)</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                }
-                else
-                {
-                    <br />
-                    <div class="alert alert-danger text-danger" role="alert">
-                        No categories found.
-                    </div>
-                }
-            </div>
-        </div>
+        <partial name="_categoryIndex" />
     </div>
+    <partial name="_createCategoryFormModal" />
 </div>
 
 
