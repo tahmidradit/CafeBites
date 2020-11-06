@@ -10,6 +10,7 @@ namespace CafeBites.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<CafeBitesUser> CafeBitesUsers { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {

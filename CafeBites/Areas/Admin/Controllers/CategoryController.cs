@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CafeBites.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.EntityFrameworkCore;
 
 namespace CafeBites.Areas.Admin.Controllers
 {
@@ -17,9 +19,10 @@ namespace CafeBites.Areas.Admin.Controllers
             this.context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var categoriesList = await context.Categories.ToListAsync();
+            return View(categoriesList);
         }
 
         //public async Task<IActionResult> Create()
