@@ -10,6 +10,8 @@ namespace CafeBites.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Required, StringLength(80), Display(Name ="Category Name")]
         public string Name { get; set; }
     }
 }

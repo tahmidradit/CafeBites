@@ -1,4 +1,4 @@
-﻿ 
+﻿@model IEnumerable<Category> 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,9 +7,9 @@
 <div class="card text-white">
     <div class="card-header bg-primary">Category List</div>
     <div class="card-body">
-        <partial name="_categoryIndex" />
+        <partial name="_categoryIndex" model="@Model"/>
     </div>
-    <partial name="_createCategoryFormModal" />
+    <partial name="_createCategoryFormModal" model="@Model" />
 </div>
 
 
